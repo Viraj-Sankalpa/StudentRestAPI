@@ -24,4 +24,12 @@ public class StudentController {
         return students;
     }
 
+    //get student by id
+    //localhost:8080/students/id
+    @GetMapping("students/{id}")
+    public Student getStudent(@PathVariable int id){
+        Student student = repo.findById(id).get();
+        return student;
+    }
+
 }
