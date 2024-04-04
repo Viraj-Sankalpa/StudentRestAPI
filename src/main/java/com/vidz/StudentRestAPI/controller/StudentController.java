@@ -49,4 +49,12 @@ public class StudentController {
         return student;
     }
 
+    //delete student
+    //localhost:8080/student/delete/id
+    @DeleteMapping("/student/delete/{id}")
+    public void deleteStudent(@PathVariable int id){
+        Student student = repo.findById(id).get();
+        repo.delete(student);
+    }
+
 }
