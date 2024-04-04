@@ -39,4 +39,14 @@ public class StudentController {
 
     }
 
+    //update student details
+    //localhost:8080/student/update/id
+    @PutMapping("/student/update/{id}")
+    public Student updateStudent(@PathVariable int id){
+        Student student = repo.findById(id).get();
+        student.setName("pasan");
+        repo.save(student);
+        return student;
+    }
+
 }
